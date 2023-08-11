@@ -10,10 +10,10 @@ poetry run python manage.py migrate
 To run the dev server, use:
 
 * django dev server: `poetry run python manage.py runserver`
-* daphne directly: `daphne -b 0.0.0.0 -p 8000 sb_chat.asgi:application`
+* daphne directly: `poetry run daphne -b 0.0.0.0 -p 8000 sb_chat.asgi:application`
 * (n.b. these are both for local dev, there is no production-safe configuration)
 
-Go to a chat room by putting a "room name" into a URL, e.g. http://localhost:8000/room1/
+Go to a chat room by putting a "room name" into a URL, e.g. http://localhost:8000/room%201/
 
 Send a message with the text input + press enter.
 
