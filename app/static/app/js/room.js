@@ -6,9 +6,9 @@ async function sendMessage(roomName, messageContent) {
         body: JSON.stringify({
             query: `
                 mutation sendMessage($roomName: String!, $messageContent: String!) {
-                    sendMessage(input: {
-                            roomName: $roomName,
-                            messageContent: $messageContent,
+                    sendChatRoomMessage(input: {
+                        roomName: $roomName,
+                        messageContent: $messageContent,
                     }) {
                         __typename
                     }
