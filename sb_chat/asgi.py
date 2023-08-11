@@ -11,6 +11,16 @@ import os
 
 from django.core.asgi import get_asgi_application
 
+from strawberry.channels import GraphQLProtocolTypeRouter
+ 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "sb_chat.settings")
 
-application = get_asgi_application()
+django = get_asgi_application()
+
+from app.schema import schema # noqa
+ 
+ 
+application = GraphQLProtocolTypeRouter(
+    schema,
+    django_application=django,
+)
