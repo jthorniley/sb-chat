@@ -4,19 +4,21 @@ version = "0.1.0"
 description = ""
 authors = ["James Thorniley <james.thorniley@mixcloud.com>"]
 readme = "README.md"
-packages = [{include = "sb_chat"}]
+packages = [{ include = "sb_chat" }]
 
 [tool.poetry.dependencies]
 python = "^3.11"
-strawberry-graphql = {extras = ["channels"], version = "^0.203.0"}
+strawberry-graphql = { extras = ["channels"], version = "^0.203.0" }
 daphne = "^4.0.0"
 django = "^4.2.4"
+uvicorn = { extras = ["standard"], version = "^0.23.2" }
 
 
 [tool.poetry.group.dev.dependencies]
 black = "^23.7.0"
 ruff = "^0.0.284"
 pytest = "^7.4.0"
+
 
 [build-system]
 requires = ["poetry-core"]
