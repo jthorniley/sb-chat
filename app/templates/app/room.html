@@ -3,5 +3,28 @@
 <html>
     <body>
         <h1>Chat room: {{ room_name }}</h1>
+    
+        <section id="messages">
+
+        </section>
+
+        <input type="text" placeholder="say something" name="messageInput">
     </body>
+
+    <script type="module">
+        // N.B. backend cleans room_name to A-Za-z0-9_-[space] only so this should be safe
+        const roomName = "{{ room_name }}"
+
+        console.log(`entering chat room ${roomName}`)
+
+        const messageInput = document.querySelector('input[name="messageInput"]')
+
+        messageInput.addEventListener("keypress", (event) => {
+            if (event.key === "Enter") {
+                const message = messageInput.value;
+                messageInput.value = '';
+                console.debug(`Message entered: ${message}`)
+            }
+        })
+    </script>
 </html>
