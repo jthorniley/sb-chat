@@ -98,7 +98,9 @@ class ChatRoomMessagesInput:
 
 @strawberry.type
 class Subscription:
-    @strawberry.subscription("Get messages delivered to a chat room as they arrive")
+    @strawberry.subscription(
+        description="Get messages delivered to a chat room as they arrive"
+    )
     async def chat_room_messages(
         self, info: Info, input: ChatRoomMessagesInput
     ) -> AsyncGenerator[ChatRoomMessage, None]:
